@@ -1,0 +1,8 @@
+{% include "header.njk" %}
+
+<body>
+{% for singleMessage in messages %}
+    <h1>{{singleMessage.guestName}}</h1>
+    <p> {{singleMessage.guestName}}</p>
+{% endfor %}
+</body>

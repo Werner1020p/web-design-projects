@@ -1,0 +1,15 @@
+<html>
+{% include "header.njk" %}
+  <body>
+    <form method="POST" action="/sign">
+      <input type="text" placeholder="sign your name" name="guest">
+      <input type="text" placeholder="write a message" name="guestMessage">
+      <input type="submit" value="sign my guestbook">
+
+    <h1> Class 5 </h1>
+    <h2> With a dynamic variable that has the value: Test </h2>
+    </form>
+
+    {{ serverData | safe }}
+  </body>
+</html>
