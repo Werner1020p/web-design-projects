@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>class 13 starter</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+          <input type="text" name="text" placeholder="Say something..." />
+          <div class="submit-container">
+            <div>
+              <label for="file-upload" class="custom-file-upload"> </label>
+              <input id="file-upload" name="theimage" type="file" />
+            </div>
+            <div>
+              <input type="submit" name="submitbutton" value="Submit" />
+            </div>
+          </div>
+      </form>
+    <div class="all-posts">
+      <!-- add the variable in response.render) -->
+        {% for post in data %} 
+        {# what is the difference between {%%} and {{ }} ? #}
+        {# A: {% %} is for logic like loops, if statements, and control flow. {{ }} is for printing/showing values on the page. #}
+            <div class='single-post'>
+                <span> {{post.date}} </span>
+                <a href="/post/{{post._id}}"><img src='{{post.image}}'></a>
+                <p> {{post.dataCaption}} </p>
+            </div>
+        {% endfor %}
+      </div>
+  </body>
+</html>
